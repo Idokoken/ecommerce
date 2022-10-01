@@ -1,0 +1,13 @@
+*{
+	box-sizing: border-box;
+	text-decoration: none;
+	font-family: 'roboto', san-serif;
+}
+
+header{
+	height: 200px;
+	background: ;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
