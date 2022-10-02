@@ -28,6 +28,7 @@ app.use('/css', express.static(path.join(__dirname, '/node_modules/bootstrap/dis
 app.use('/js', express.static(path.join(__dirname, '/node_modules/bootstrap/dist/js')))
 
 app.use(morgan('dev'))
+app.use(cookieParser())
 app.use(session({
 	secret: 'user secret',
 	saveUninitialized: true,
@@ -48,9 +49,13 @@ db.once('open', () => console.log(`connected to ${chalk.magenta('database')}`))
 
 //route setup
 app.get('/', (req, res) => {
-	res.send("hello")
+	let cookieValue = req.cookies
+	console.log(cookieValue.cart)
+	res.clearCookie('cart')
+	res.send("you are on the homepage")
+	
 })
-app.use('/products', productsRouter)
+app.use('/', productsRouter)
 
 const port = process.env.PORT || 8080
 
