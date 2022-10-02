@@ -1,9 +1,11 @@
-const express = require("express")
+const express = require("express");
+const Data = require("../src/data");
 
-const productsRouter = express.Router()
+const productsRouter = express.Router();
 
-productsRouter.get('/', (req, res) => {
-	res.render('products')
-})
+productsRouter.get("/", (req, res) => {
+  res.render("products", { products: Data });
+  console.log(Data);
+});
 
-module.exports = productsRouter
+module.exports = productsRouter;

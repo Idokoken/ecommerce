@@ -1,45 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-     <link rel='stylesheet' href='/css/style.css'> 
-     <link rel='stylesheet' href='/css/bootstrap.min.css'>
-     <link rel="stylesheet" href="/css/fontawesome.min.css">
+  <head>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/fontawesome.min.css" />
     <title>zeestore</title>
-   </head>
-   <body>
-      <%- include('../partials/header'); %>      
-      <div class="colorBody">
-         <div class="containerButton">
-           <button id="redbutton">Reds</button>
-            <button id="bluebutton">Blues</button>
-             <button id="greenbutton">Green</button>
-              <button id="otherbutton">Others</button>
-         </div>
-      </div>
-      <div class="productContainer">
-         <div class="listing">
-           <div class="listingImg">
-             <img src="#" />
-           </div>
-            <div class="listingTitle">
-              <p>product title</p>
-            </div>
-            <div class="listingPrice">
-              <p>$10</p>
-            </div>
-            <div class="listingButton">
-              <button id="buyNow">Buy it now</button>
-              <button id="addCart">Add to Cart</button>
-            </div>
-         </div>
-      </div>
-     <main>    
-     <%-body%>      
-     </main>
-     
-     <%- include('../partials/footer'); %>      
-      <!-- js -->
-      <script src='/js/bootstrap.bundle.min.js'></script>
-      <script src='/js/all.min.js'></script>
-   </body>
+  </head>
+  <body>
+    <%- include('../partials/header'); %>
+
+    <main><%-body%></main>
+
+    <%- include('../partials/footer'); %>
+    <!-- js -->
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/all.min.js"></script>
+  </body>
 </html>

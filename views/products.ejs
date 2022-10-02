@@ -1,3 +1,27 @@
-<div>
-  <h3>hello from products page</h3>
+<div class="colorBody">
+  <div class="buttonContainer">
+    <button id="redbutton">Reds</button>
+    <button id="bluebutton">Blues</button>
+    <button id="greenbutton">Green</button>
+    <button id="otherbutton">Others</button>
+  </div>
+  <div class="productContainer">
+    <% for( let i = 0; i < products.length; i++ ) { %>
+    <div class="listing">
+      <div class="listingImg mb-2">
+        <img src="<%= products[i].cover %> " />
+      </div>
+      <div class="listingTitle">
+        <p><%= products[i].title %></p>
+      </div>
+      <div class="listingPrice">
+        <p>$<%= products[i].price %></p>
+      </div>
+      <div class="listingButton">
+        <button id="buyNow">Buy it now</button>
+        <button id="addCart">Add to Cart</button>
+      </div>
+    </div>
+    <% } %>
+  </div>
 </div>
