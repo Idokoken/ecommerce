@@ -7,7 +7,7 @@ const expresslayout = require("express-ejs-layouts");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
-//const flash = require('connect-flash')
+const flash = require("connect-flash");
 const productsRouter = require("./routes/productsRouter");
 
 require("dotenv").config();
@@ -34,6 +34,7 @@ app.use(
 );
 
 app.use(morgan("dev"));
+app.use(cookieParser());
 app.use(
   session({
     secret: "user secret",
@@ -42,10 +43,11 @@ app.use(
     cookie: { maxAge: 60000 },
   })
 );
-//app.use(flash())
-/*app.use(function (req, res, next) { res.locals.messages = require('express-messages')(req, res); next(); 
+app.use(flash());
+app.use(function (req, res, next) {
+  res.locals.messages = require("express-messages")(req, res);
+  next();
 });
-*/
 
 //database setup
 mongoose.connect("mongodb://localhost/ecommerce", {
@@ -58,9 +60,12 @@ db.once("open", () => console.log(`connected to ${chalk.magenta("database")}`));
 
 //route setup
 app.get("/", (req, res) => {
-  res.send("hello");
+  let cookieValue = req.cookies;
+  console.log(cookieValue.cart);
+  res.clearCookie("cart");
+  res.send("you are on the homepage");
 });
-app.use("/products", productsRouter);
+app.use("/", productsRouter);
 
 const port = process.env.PORT;
 

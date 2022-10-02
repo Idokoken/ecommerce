@@ -58,6 +58,64 @@ header {
 	width: 30px;
 	object-fit: contain;
 }
+.listingTitle p{
+	color: black;
+}
 
-
+/* listingPage section */
+.listingPageContainer{
+	display: grid;
+	grid-template-columns: 50% 50%;
+	margin-top: 30px;
+}
+.listingImg{
+	display: flex;
+	justify-content: center;
+	align-items: center
+}
+.listingImg img{
+	height: 480px;
+	width: 480px
+}
+#listingTitle{
+	font-size: 2.2em;
+	font-family: 'Roboto Condensed', san-serif;
+}
+#price{
+	font-size: 30px;
+	font-family: 'Roboto Condensed', san-serif;
+}
+.description p{
+	font-size: 1.5em;
+	font-family: 'Roboto Condensed', san-serif;
+}
+.listingButtons{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 300px;
+}
+.listingButtons button{
+	margin: 10px;
+	background: none;
+	width: 100px;
+	height: 50px;
+	border: 2px solid black;
+	font-size: 17px;
+	font-family: 'Ubuntu Condensed', sans-serif;
+	border-radius: 10px;
+	transition: 0.7s;
+}
+#buyNow:hover{
+	background: #beeb9f;
+}
+#buyNow:active{
+	background: #89d485;
+}
+#addCart:hover{
+	background: #ffff9d;
+}
+#addCart:active{
+	background: #ffe991;
+}
 
