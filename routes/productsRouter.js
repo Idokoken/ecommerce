@@ -5,10 +5,11 @@ const productsRouter = express.Router();
 
 productsRouter.get("/products", (req, res) => {
   let cookieValue = req.cookies;
+  let cookieArray;
   if (cookieValue.cart) {
-    let cookieArray = JSON.parse(cookieValue.cart);
+    cookieArray = JSON.parse(cookieValue.cart);
   } else {
-    let cookieValue = [];
+    cookieArray = [];
   }
   res.render("products", { products: Data, cartNumb: cookieArray.length });
 });

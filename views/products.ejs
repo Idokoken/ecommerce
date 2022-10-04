@@ -9,19 +9,25 @@
     <% for( let i = 0; i < products.length; i++ ) { %>
     <div class="listing">
       <div class="listingImg mb-2">
-        <img src="<%= products[i].cover %> " />
+        <a href="products/<%= products[i].id%>">
+          <img src="<%= products[i].cover %>"
+        /></a>
       </div>
       <div class="listingTitle">
-        <p><%= products[i].title %></p>
+        <a href="products/<%= products[i].id%>">
+          <p><%= products[i].title %></p></a
+        >
       </div>
       <div class="listingPrice">
         <p>$<%= products[i].price %></p>
       </div>
       <div class="listingButton">
         <button id="buyNow">Buy it now</button>
-        <button id="addCart">Add to Cart</button>
+        <button id="addCart" value="<%= products[i].id%>">Add to Cart</button>
       </div>
     </div>
     <% } %>
   </div>
 </div>
+
+<!-- hhdhhdh -->

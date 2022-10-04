@@ -1,22 +1,23 @@
 <div class="listingPageContainer">
-  <div class='listingImg'>
-    <img src="<% =product.cover" />
+  <div class="listingImg">
+    <img src="<%= product.cover%>" />
   </div>
   <div class="rightContents">
     <div class="">
-      <p id="listingTitle"><% =product.title></p>    
-    </div>
-    div class="">
-      <p id="price"><%product.price%></p>    
-    </div>
-    <div class="listingButtons">
-      <button id="buyNow">Buy it now</button><button id="addCart" value='<%= product.id%>'>Add to Cart</button>
-    </div>
-    <div class="description">
-      <p class=""><% =product.description%></p>    
+      <p id="listingTitle"><%= product.title%></p>
     </div>
     <div class="">
-      <p class=""><i>Shipping Time- 4-5 Days</i></p>    
+      <p id="price"><%= product.price%></p>
+    </div>
+    <div class="listingButtons">
+      <button id="buyNow">Buy it now</button
+      ><button id="addCart" value="<%= product.id%>">Add to Cart</button>
+    </div>
+    <div class="description">
+      <p class=""><%= product.description%></p>
+    </div>
+    <div class="">
+      <p class=""><i>Shipping Time- 4-5 Days</i></p>
     </div>
   </div>
 </div>
