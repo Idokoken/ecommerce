@@ -26,14 +26,13 @@ header {
 	text-decoration: none;
 	color: white;
 }
-
 .colorBody{
 	display: grid;
 	grid-template-columns: 20% 80%;
 }
 .buttonContainer{
 	display: flex;
-	flex-direction: column;
+	flex-wrap: wrap;
 }
 .buttonContainer button{
 	width: 100%;
@@ -41,25 +40,33 @@ header {
 	margin: 0;
 }
 .productContainer{
-	display: flex;
-	justify-content: center;
+	display: grid;
+	grid-template-columns: 33% 33% 33%;
+	padding: 10px;
 }
-.listing{
+.productContainer .listing{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	height: 300px;
-	display: flex;
 	margin-top: 20px;
+	height: 400px;
+	width: 
 }
 
-.listingImg{
+.productContainer .listingImg{
 	height: 300px;
-	width: 300px;
-	object-fit: contain;
+	width: 100%;
+	height: 250px 
+
 }
-.listingTitle p{
+.productContainer .listingTitle p{
 	color: black;
+}
+
+.productContainer .listingImg img{
+	object-fit: contain;
+	max-width: 100%; 
+	height: auto;
 }
 
 /* listingPage section */
@@ -68,34 +75,34 @@ header {
 	grid-template-columns: 50% 50%;
 	margin-top: 30px;
 }
-.listingImg{
+.listingPageContainer .listingImg{
 	display: flex;
 	justify-content: center;
 	align-items: center
 }
-.listingImg img{
+.listingPageContainer .listingImg img{
 	height: 480px;
-	width: 480px
+	width: 480px;
 }
-#listingTitle{
+.listingPageContainer #listingTitle{
 	font-size: 2.2em;
 	font-family: 'Roboto Condensed', san-serif;
 }
-#price{
+.listingPageContainer #price{
 	font-size: 30px;
 	font-family: 'Roboto Condensed', san-serif;
 }
-.description p{
+.listingPageContainer .description p{
 	font-size: 1.5em;
 	font-family: 'Roboto Condensed', san-serif;
 }
-.listingButtons{
+.listingPageContainer .listingButtons{
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	width: 300px;
 }
-.listingButtons button{
+.listingPageContainer .listingButtons button{
 	margin: 10px;
 	background: none;
 	width: 100px;
@@ -118,4 +125,3 @@ header {
 #addCart:active{
 	background: #ffe991;
 }
-

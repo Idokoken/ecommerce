@@ -7,7 +7,7 @@ const Data = [
     genre: "drama",
     color: "red",
     price: 21,
-    cover: "/items/project1.jpg",
+    cover: "/items/red.JPG",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const Data = [
     genre: "science fiction",
     color: "blue",
     price: 20,
-    cover: "/items/project2.jpg",
+    cover: "/items/red.JPG",
   },
   {
     id: 3,
@@ -47,7 +47,7 @@ const Data = [
     genre: "prose",
     color: "blue",
     price: 40,
-    cover: "/items/blue.png",
+    cover: "/items/blue.JPG",
   },
   {
     id: 6,
@@ -57,7 +57,7 @@ const Data = [
     genre: "drama",
     color: "red",
     price: 28,
-    cover: "/items/red.png",
+    cover: "/items/red.jpg",
   },
   {
     id: 7,
