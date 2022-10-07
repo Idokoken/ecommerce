@@ -1,8 +1,24 @@
-<div class="listingPageContainer">
-  <div class="listingImg">
-    <img src="<%= product.cover%>" />
+<header>
+  <div class="navigation">
+    <div class="navlink">
+      <a href="#">Home</a>
+    </div>
+    <div class="navlink">
+      <a href="#">Colors</a>
+    </div>
+    <div class="navlink">
+      <a href="#">Cart<em><% if(cartNumb != 0){%><%= cartNumb%><%}%></em></a>
+    </div>
+    <div class="navlink">
+      <a href="#">Contact</a>
+    </div>
   </div>
-  <div class="rightContents">
+</header>
+<div class="listingPageContainer container-fluid">
+  <div class="listingImg">
+    <img src="<%= product.cover%>" class="img-fluid" />
+  </div>
+  <div class="rightContents p-2">
     <div class="">
       <p id="listingTitle"><%= product.title%></p>
     </div>

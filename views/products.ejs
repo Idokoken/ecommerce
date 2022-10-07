@@ -1,20 +1,36 @@
+<header>
+  <div class="navigation">
+    <div class="navlink">
+      <a href="#">Home</a>
+    </div>
+    <div class="navlink">
+      <a href="#">Colors</a>
+    </div>
+    <div class="navlink">
+      <a href="#">Cart<em></em></a>
+    </div>
+    <div class="navlink">
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</header>
 <div class="colorBody">
   <div class="buttonContainer">
-    <button id="redbutton">Reds</button>
-    <button id="bluebutton">Blues</button>
-    <button id="greenbutton">Green</button>
-    <button id="otherbutton">Others</button>
+    <button id="redbutton">REDS</button>
+    <button id="bluebutton">BLUES</button>
+    <button id="greenbutton">GREENS</button>
+    <button id="otherbutton">OTHERS</button>
   </div>
   <div class="productContainer">
     <% for( let i = 0; i < products.length; i++ ) { %>
     <div class="listing">
       <div class="listingImg mb-2">
-        <a href="products/<%= products[i].id%>">
+        <a href="/products/<%= products[i].id%>">
           <img src="<%= products[i].cover %>"
         /></a>
       </div>
       <div class="listingTitle">
-        <a href="products/<%= products[i].id%>">
+        <a href="/products/<%= products[i].id%>">
           <p><%= products[i].title %></p></a
         >
       </div>
@@ -29,3 +45,6 @@
     <% } %>
   </div>
 </div>
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="/js/jquery.js"></script> -->

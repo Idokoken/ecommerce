@@ -5,6 +5,7 @@ const path = require("path");
 const mongoose = require("mongoose");
 const expresslayout = require("express-ejs-layouts");
 const morgan = require("morgan");
+const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const flash = require("connect-flash");
@@ -34,13 +35,14 @@ app.use(
 );
 
 app.use(morgan("dev"));
+app.use(cors());
 app.use(cookieParser());
 app.use(
   session({
     secret: "user secret",
     saveUninitialized: true,
     resave: true,
-    cookie: { maxAge: 60000 },
+    // cookie: { maxAge: 60000 },
   })
 );
 app.use(flash());
@@ -50,8 +52,8 @@ app.use(function (req, res, next) {
 });
 
 //database setup
-//"mongodb://localhost/ecommerce"
-mongoose.connect(process.env.MONGO_URI, {
+// process.env.MONGO_URI
+mongoose.connect("mongodb://localhost/ecommerce", {
   useUnifiedTopology: true,
   useNewUrlParser: true,
 });
