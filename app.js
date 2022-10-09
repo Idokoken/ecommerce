@@ -53,7 +53,8 @@ app.use(function (req, res, next) {
 
 //database setup
 // process.env.MONGO_URI
-mongoose.connect("mongodb://localhost/ecommerce", {
+// mongodb://localhost/ecommerce
+mongoose.connect(process.env.MONGO_URI, {
   useUnifiedTopology: true,
   useNewUrlParser: true,
 });
@@ -65,7 +66,8 @@ db.once("open", () => console.log(`connected to ${chalk.magenta("database")}`));
 app.get("/", (req, res) => {
   let cookieValue = req.cookies;
   console.log(cookieValue.cart);
-  //res.clearCookie("cart");
+  console.log(cookieValue)
+  res.clearCookie("cart");
   res.send("you are on the homepage");
 });
 app.use("/", productsRouter);

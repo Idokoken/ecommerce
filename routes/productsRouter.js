@@ -30,7 +30,7 @@ productsRouter.get("/product/:type", (req, res) => {
 productsRouter.get("/addcart/:id", (req, res) => {
   const { id } = req.params;
   let cookieValue = req.cookies;
-  if (cookieValue.cart) {
+  if (!cookieValue.cart) {
     let cookieArray = [];
     cookieArray.push(id);
     let cookieStringArray = JSON.stringify(cookieArray);
