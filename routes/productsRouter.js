@@ -35,7 +35,7 @@ productsRouter.get("/addcart/:id", (req, res) => {
     cookieArray.push(id);
     let cookieStringArray = JSON.stringify(cookieArray);
 
-    res.cookie("cart", cookieStringArray); 
+    res.cookie("cart", cookieStringArray);
     res.send({ cartNumb: 1 });
   } else {
     let cartValue = cookieValue.cart;
@@ -43,7 +43,7 @@ productsRouter.get("/addcart/:id", (req, res) => {
     cookieArray.push(id);
     var cookieStringArray = JSON.stringify(cookieArray);
 
-    res.clearCookie("cart");  
+    res.clearCookie("cart");
 
     res.cookie("cart", cookieStringArray);
     res.send({ cartNumb: cookieArray.length });

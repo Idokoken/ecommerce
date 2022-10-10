@@ -10,6 +10,7 @@ const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const flash = require("connect-flash");
 const productsRouter = require("./routes/productsRouter");
+const indexRouter = require("./routes/indexRouter");
 
 require("dotenv").config();
 
@@ -66,11 +67,12 @@ db.once("open", () => console.log(`connected to ${chalk.magenta("database")}`));
 app.get("/", (req, res) => {
   let cookieValue = req.cookies;
   console.log(cookieValue.cart);
-  console.log(cookieValue)
+  console.log(cookieValue);
   res.clearCookie("cart");
   res.send("you are on the homepage");
 });
 app.use("/", productsRouter);
+app.use("/", indexRouter);
 
 const port = process.env.PORT;
 

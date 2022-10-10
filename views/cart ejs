@@ -1,22 +1,42 @@
 <header>
   <div class="navigation">
     <div class="navlink">
-      <a href="#">Home</a>
+      <a href="/">Home</a>
     </div>
     <div class="navlink">
-      <a href="#">Colors</a>
+      <a href="/color">Colors</a>
     </div>
     <div class="navlink">
-      <a href="#">Cart<em>
-        
-      <% if (cartNumb != 0) { %>
-  <%= cartNumb %>
-<% } %>
-    
-      </em></a>
+      <a href="/cart"
+        >Cart<em> <% if (cartNumb != 0) { %> <%= cartNumb %> <% } %> </em></a
+      >
     </div>
     <div class="navlink">
-      <a href="#">Contact</a>
+      <a href="/contact">Contact</a>
     </div>
   </div>
 </header>
+<div class="cart">
+  <% for( let i = 0; i < cartValues.length; i++ ) { %>
+  <div class="item">
+    <div class="itemContent"></div>
+    <img src="<%= cartValues[i].cover %> " alt="cover" />
+    <div class="listingText">
+      <h2><%= cartValues[i].title %>: <%= cartValues[i].price %></h2>
+    </div>
+    <div class="itemRemove">
+      <a href="<%= cartValues[i].id %>"><button>Remove</button></a>
+    </div>
+  </div>
+  <% } %>
+  <div class="checkout">
+    <div>
+      <% if (total > 0) { %>
+      <h2>Total: $<%= total %> + $5(Shipping)</h2>
+      <% } else { %>
+      <h2>No Item in the Cart</h2>
+      %>
+    </div>
+    <br />
+  </div>
+</div>
