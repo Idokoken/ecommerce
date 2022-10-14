@@ -55,7 +55,7 @@ app.use(function (req, res, next) {
 //database setup
 // process.env.MONGO_URI
 // mongodb://localhost/ecommerce
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect("mongodb://localhost/ecommerce", {
   useUnifiedTopology: true,
   useNewUrlParser: true,
 });

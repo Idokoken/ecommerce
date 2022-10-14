@@ -1,10 +1,10 @@
 <header>
   <div class="navigation">
     <div class="navlink">
-      <a href="/">Home</a>
+      <a href="/products">Home</a>
     </div>
     <div class="navlink">
-      <a href="/color">Colors</a>
+      <a href="/colors">Colors</a>
     </div>
     <div class="navlink">
       <a href="/cart"
@@ -16,7 +16,7 @@
     </div>
   </div>
 </header>
-<div class="cart">
+<div class="cart container">
   <% for( let i = 0; i < cartValues.length; i++ ) { %>
   <div class="item">
     <div class="itemContent"></div>
@@ -33,9 +33,9 @@
     <div>
       <% if (total > 0) { %>
       <h2>Total: $<%= total %> + $5(Shipping)</h2>
-      <% } else { %>
+      <% } else { %>%>
       <h2>No Item in the Cart</h2>
-      %>
+      <%}%>
     </div>
     <br />
   </div>
